@@ -96,22 +96,6 @@ Essa abordagem melhora a organização do código, facilita testes e aproxima o 
 
 ---
 
-## 🗂️ Organização do Projeto
-
-O desenvolvimento será guiado por **épicos e sprints**, simulando um fluxo ágil real.
-
-### Épicos principais:
-
-* Setup do projeto
-* Modelagem de domínio
-* Autenticação e segurança
-* Gestão de agenda
-* Desenvolvimento do frontend
-* Integração
-* Melhorias e diferenciais
-
----
-
 ## 🔮 Roadmap (Evoluções Futuras)
 
 * Docker
