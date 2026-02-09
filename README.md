@@ -113,7 +113,7 @@ Essa abordagem melhora a organização do código, facilita testes e aproxima o 
 
 ```bash
 # clonar repositório
-git clone <repo-url>
+git clone https://github.com/jefferson-barroso/NailBook
 
 # entrar na pasta
 cd nailbook-backend
