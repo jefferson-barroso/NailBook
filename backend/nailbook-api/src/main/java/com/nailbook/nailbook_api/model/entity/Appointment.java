@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="appoiments")
+@Table(name="appointments")
 public class Appointment {
 
     @Id
@@ -18,6 +18,8 @@ public class Appointment {
     @Enumerated(EnumType.STRING)
     private AppoimentStatus status;
 
+    @ManyToOne
+    @JoinColumn(name="client_id")
     private User client;
 
     private String serviceName;
