@@ -26,11 +26,17 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/appointments/buscarMeusAgendamentos")
+                        .hasRole("CLIENT")
+                        .requestMatchers("/appointments/buscarTodosAgendamentos")
+                        .hasAnyRole("MANICURE", "ADMIN")
                         .anyRequest().authenticated()
                 )
             .addFilterBefore(jwtAuthenticationFilter,
                 org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
+
     }
 
     @Bean

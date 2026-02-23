@@ -1,6 +1,7 @@
 package com.nailbook.nailbook_api.controller;
 
 
+import com.nailbook.nailbook_api.dto.AppointmentResponseDTO;
 import com.nailbook.nailbook_api.model.entity.Appointment;
 import com.nailbook.nailbook_api.service.AppointmentService;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +21,18 @@ public class AppointmentController {
     }
 
     @PostMapping("/agendar")
-    public ResponseEntity<Appointment> create (@RequestBody Appointment appointment){
+    public ResponseEntity<AppointmentResponseDTO> create (@RequestBody Appointment appointment){
         return ResponseEntity.ok(appointmentService.create(appointment));
     }
 
     @GetMapping("/buscarTodosAgendamentos")
-    public ResponseEntity<List<Appointment>> list(){
-        return ResponseEntity.ok(appointmentService.listAll());
+    public ResponseEntity<List<AppointmentResponseDTO>> list(){
+        return ResponseEntity.ok(appointmentService.listAllAppointments());
+    }
+
+    @GetMapping("/buscarMeusAgendamentos")
+    public ResponseEntity<List<AppointmentResponseDTO>> listMy(){
+        return ResponseEntity.ok(appointmentService.listMyAppointments());
     }
 
 }
