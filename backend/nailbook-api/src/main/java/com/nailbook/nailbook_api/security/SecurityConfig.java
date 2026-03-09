@@ -30,6 +30,7 @@ public class SecurityConfig {
                         .hasRole("CLIENT")
                         .requestMatchers("/appointments/buscarTodosAgendamentos")
                         .hasAnyRole("MANICURE", "ADMIN")
+                        .requestMatchers("/users/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
             .addFilterBefore(jwtAuthenticationFilter,
